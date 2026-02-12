@@ -1,0 +1,1493 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Strategy, audits, and visual identity for business. Simple solutions, clear forms, calm tone. Point_Zero — a marketing agency without noise or marathons.">
+  <title>Point_Zero — Marketing Agency Without Noise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Space Mono', monospace;
+      background-color: #fafaf9;
+      color: #1a1a1a;
+      line-height: 1.5;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+    }
+
+    main {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Hero Section - Bold Bauhaus */
+    .hero {
+      width: 100%;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      color: #fafaf9;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+      align-items: stretch;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(45deg, #ff6b35 0%, #f7931e 100%);
+      border-radius: 0;
+      top: -100px;
+      right: -100px;
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .hero-content {
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 1;
+      position: relative;
+    }
+
+    .hero-logo {
+      font-size: 11px;
+      letter-spacing: 4px;
+      font-weight: 700;
+      color: #ff6b35;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 6vw, 64px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      color: #fafaf9;
+      letter-spacing: -1px;
+    }
+
+    .hero-subheadline {
+      font-size: 13px;
+      font-weight: 400;
+      color: #d0d0d0;
+      margin-bottom: 40px;
+      line-height: 1.8;
+      letter-spacing: 0.5px;
+      max-width: 380px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 16px 32px;
+      background-color: #ff6b35;
+      color: #1a1a1a;
+      border: 2px solid #ff6b35;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      font-weight: 700;
+      width: fit-content;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #1a1a1a;
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .hero-cta:hover::before {
+      left: 0;
+    }
+
+    .hero-cta:hover {
+      color: #ff6b35;
+    }
+
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+      overflow: hidden;
+    }
+
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 2px solid #ff6b35;
+      opacity: 0.2;
+      animation: rotate 20s linear infinite;
+    }
+
+    .hero-visual::after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ff6b35;
+      opacity: 0.3;
+      animation: rotate 15s linear infinite reverse;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .geometric-accent {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: #ff6b35;
+      opacity: 0.1;
+    }
+
+    .accent-1 { top: 10%; left: 10%; transform: rotate(45deg); }
+    .accent-2 { bottom: 20%; right: 15%; }
+
+    /* Magazine Grid Layout */
+    section {
+      width: 100%;
+      padding: 100px 60px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .section-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 900;
+      margin-bottom: 60px;
+      letter-spacing: -1px;
+      color: #1a1a1a;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    section h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 40px;
+      background: #ff6b35;
+      margin-right: 20px;
+      margin-top: -4px;
+    }
+
+    /* Manifesto */
+    .manifesto-grid {
+      display: grid;
+      grid-template-columns: 60% 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .manifesto-text {
+      font-size: 18px;
+      line-height: 1.9;
+      font-weight: 400;
+      color: #333;
+      font-family: 'Space Mono', monospace;
+      letter-spacing: 0.2px;
+    }
+
+    .manifesto-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      height: 300px;
+    }
+
+    .manifesto-box {
+      background: #f0f0f0;
+      border: 2px solid #e5e5e5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #999;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .manifesto-box:nth-child(1) {
+      background: #ff6b35;
+      grid-column: 1 / -1;
+      color: white;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .manifesto-box:nth-child(2) {
+      grid-row: 2 / 3;
+    }
+
+    .manifesto-box:nth-child(3) {
+      background: #1a1a1a;
+      color: #fafaf9;
+    }
+
+    /* Experience & Results - Magazine Style */
+    .experience-intro {
+      font-size: 17px;
+      line-height: 2;
+      color: #444;
+      margin-bottom: 60px;
+      padding: 40px 0;
+      border-top: 2px solid #1a1a1a;
+      border-bottom: 2px solid #1a1a1a;
+      font-family: 'Space Mono', monospace;
+      letter-spacing: 0.3px;
+    }
+
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .fact-item {
+      border-left: 3px solid #ff6b35;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .fact-item::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: -2px;
+      width: 12px;
+      height: 12px;
+      background: #ff6b35;
+    }
+
+    .fact-item p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #1a1a1a;
+      font-weight: 400;
+    }
+
+    /* Services - Magazine Cards */
+    .services-magazine {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .service-card {
+      padding: 48px 40px;
+      background: white;
+      border: 1px solid #e5e5e5;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 0;
+      background: #ff6b35;
+      transition: height 0.4s ease;
+    }
+
+    .service-card:hover {
+      border-color: #1a1a1a;
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .service-card:hover::before {
+      height: 100%;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+      letter-spacing: -0.5px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.8;
+      margin: 0;
+      letter-spacing: 0.2px;
+    }
+
+    /* Process - Horizontal Timeline */
+    .process-wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .process-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #ff6b35 0%, #ff6b35 25%, transparent 25%, transparent 75%, #ff6b35 75%, #ff6b35 100%);
+      z-index: 0;
+    }
+
+    .step-card {
+      background: white;
+      padding: 32px 24px;
+      border: 2px solid #e5e5e5;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .step-number {
+      font-size: 24px;
+      font-weight: 900;
+      color: #ff6b35;
+      margin-bottom: 16px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .step-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      color: #1a1a1a;
+    }
+
+    .step-card p {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Team - Magazine Spread */
+    .team-magazine {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 40px;
+      margin-top: 60px;
+      align-items: start;
+    }
+
+    .team-member-featured {
+      background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+      padding: 48px 40px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-member-featured::before {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      top: -50px;
+      right: -50px;
+    }
+
+    .team-member-featured h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .team-member-featured .role {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+      opacity: 0.9;
+      position: relative;
+      z-index: 1;
+    }
+
+    .team-member-featured p {
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .team-member-featured a {
+      display: inline-block;
+      padding: 12px 24px;
+      background: white;
+      color: #ff6b35;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+
+    .team-member-featured a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .team-member-card {
+      border: 1px solid #e5e5e5;
+      padding: 32px 24px;
+      background: white;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .team-member-card:hover {
+      border-color: #ff6b35;
+      box-shadow: 0 12px 32px rgba(255, 107, 53, 0.1);
+    }
+
+    .team-member-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+
+    .team-member-card .role {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #999;
+      margin-bottom: 16px;
+    }
+
+    .team-member-card p {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Approach - Full Width Statement */
+    .approach-full {
+      background: #1a1a1a;
+      color: #fafaf9;
+      padding: 100px 60px;
+    }
+
+    .approach-full h2 {
+      color: #fafaf9;
+    }
+
+    .approach-full h2::before {
+      background: #ff6b35;
+    }
+
+    .approach-statement {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 6vw, 56px);
+      font-weight: 900;
+      line-height: 1.2;
+      margin: 60px 0;
+      color: #fafaf9;
+      letter-spacing: -1px;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .approach-point {
+      border-left: 2px solid #ff6b35;
+      padding-left: 24px;
+    }
+
+    .approach-point strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #ff6b35;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .approach-point p {
+      font-size: 14px;
+      color: #d0d0d0;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* Case Studies Grid */
+    .case-studies-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .case-study-placeholder {
+      aspect-ratio: 3/2;
+      background: linear-gradient(135deg, #f0f0f0 0%, #e5e5e5 100%);
+      border: 2px solid #e5e5e5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .case-study-placeholder:hover {
+      border-color: #ff6b35;
+      background: linear-gradient(135deg, #fafaf9 0%, #f0f0f0 100%);
+    }
+
+    .case-study-placeholder::before {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ff6b35;
+      opacity: 0.1;
+      transform: rotate(45deg);
+    }
+
+    .case-study-placeholder p {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: #999;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: #fafaf9;
+      padding: 100px 60px;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 60px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .form-message {
+      padding: 20px 24px;
+      background: #ff6b35;
+      color: white;
+      border: none;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      display: none;
+      animation: slideIn 0.3s ease;
+    }
+
+    .form-message.show {
+      display: block;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .form-group label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #1a1a1a;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 14px 16px;
+      border: 1px solid #d5d5d5;
+      background: white;
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      color: #333;
+      transition: all 0.3s ease;
+      letter-spacing: 0.2px;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #ff6b35;
+      background: #fafaf9;
+      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .form-checkbox input {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: #ff6b35;
+    }
+
+    .form-checkbox label {
+      font-size: 12px;
+      cursor: pointer;
+      margin: 0;
+      letter-spacing: 0.3px;
+    }
+
+    .form-submit {
+      padding: 16px 32px;
+      background-color: #1a1a1a;
+      color: #fafaf9;
+      border: 2px solid #1a1a1a;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 16px;
+    }
+
+    .form-submit:hover {
+      background-color: #ff6b35;
+      border-color: #ff6b35;
+      color: white;
+    }
+
+    .contact-info-box {
+      background: white;
+      border: 1px solid #e5e5e5;
+      padding: 48px 40px;
+    }
+
+    .contact-info-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 40px;
+      color: #1a1a1a;
+    }
+
+    .contact-info-item {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .contact-info-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .contact-info-item p {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #999;
+      margin-bottom: 10px;
+    }
+
+    .contact-info-item a {
+      font-size: 16px;
+      color: #1a1a1a;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .contact-info-item a:hover {
+      color: #ff6b35;
+    }
+
+    /* Footer */
+    footer {
+      width: 100%;
+      padding: 60px;
+      background: #1a1a1a;
+      color: #999;
+      border-top: 2px solid #ff6b35;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer-col h4 {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+      color: #ff6b35;
+      font-weight: 700;
+    }
+
+    .footer-col a,
+    .footer-col p {
+      font-size: 13px;
+      color: #999;
+      text-decoration: none;
+      margin-bottom: 12px;
+      display: block;
+      transition: all 0.3s ease;
+      letter-spacing: 0.2px;
+    }
+
+    .footer-col a:hover {
+      color: #fafaf9;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 40px;
+      border-top: 1px solid #333;
+      font-size: 12px;
+      color: #666;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 80px 40px;
+      }
+
+      .hero-visual {
+        display: none;
+      }
+
+      .manifesto-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-magazine {
+        grid-template-columns: 1fr;
+      }
+
+      .team-magazine {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 30px;
+      }
+
+      section h2 {
+        font-size: 28px;
+        margin-bottom: 40px;
+      }
+
+      .hero-content {
+        padding: 50px 30px;
+      }
+
+      .facts-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-wrapper::before {
+        display: none;
+      }
+
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .case-studies-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 40px 20px;
+      }
+
+      section {
+        padding: 40px 20px;
+      }
+
+      section h2 {
+        font-size: 24px;
+      }
+
+      section h2::before {
+        width: 3px;
+        height: 30px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .approach-statement {
+        font-size: 24px;
+      }
+
+      .process-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .manifesto-grid {
+        gap: 30px;
+      }
+
+      .contact-info-box {
+        padding: 32px 24px;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  /* =========================
+   HubSpot embedded form
+   ========================= */
+.hs-form-frame form,
+#hubspotForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  font-family: 'Space Mono', monospace;
+}
+
+.hs-form-frame label,
+#hubspotForm label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #1a1a1a;
+}
+
+.hs-form-frame input,
+.hs-form-frame textarea,
+#hubspotForm input,
+#hubspotForm textarea {
+  padding: 14px 16px;
+  border: 1px solid #d5d5d5;
+  background: white;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  color: #333;
+  transition: all 0.3s ease;
+  letter-spacing: 0.2px;
+}
+
+.hs-form-frame input:focus,
+.hs-form-frame textarea:focus,
+#hubspotForm input:focus,
+#hubspotForm textarea:focus {
+  outline: none;
+  border-color: #ff6b35;
+  background: #fafaf9;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.hs-form-frame textarea,
+#hubspotForm textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.hs-form-frame .hs-button,
+#hubspotForm .hs-button,
+#hubspotForm input[type="submit"] {
+  padding: 16px 32px;
+  background-color: #1a1a1a;
+  color: #fafaf9;
+  border: 2px solid #1a1a1a;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 16px;
+}
+
+.hs-form-frame .hs-button:hover,
+#hubspotForm .hs-button:hover,
+#hubspotForm input[type="submit"]:hover {
+  background-color: #ff6b35;
+  border-color: #ff6b35;
+  color: white;
+}
+
+/* validation */
+#hubspotForm .hs-error-msg,
+#hubspotForm .hs-error-msgs label {
+  font-size: 12px;
+  color: #ff6b35;
+  margin-top: 8px;
+}
+</style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <main>
+   <div class="wrapper"><!-- Hero -->
+    <section class="hero" id="hero-section">
+     <div class="hero-content">
+      <div class="hero-logo">
+       Point_Zero
+      </div>
+      <h1 id="hero-headline">We don't rush. We think and do exactly as much as needed.</h1>
+      <p class="hero-subheadline" id="hero-subheadline">Audit, strategy, visual identity, design. No hype or noise.</p><button class="hero-cta" onclick="scrollToContact()">Request an audit</button>
+     </div>
+     <div class="hero-visual">
+      <div class="geometric-accent accent-1"></div>
+      <div class="geometric-accent accent-2"></div>
+     </div>
+    </section><!-- Manifesto -->
+    <section id="manifesto-section">
+     <div class="section-container">
+      <h2>Our Philosophy</h2>
+      <div class="manifesto-grid">
+       <div class="manifesto-text" id="manifesto-text">
+        We build for those who understand that brevity is a virtue. We oppose hype, unnecessary complexity, and false urgency. Every decision serves a purpose. Every element earns its place. This is how systems endure.
+       </div>
+       <div class="manifesto-visual">
+        <div class="manifesto-box">
+         Systems that endure
+        </div>
+        <div class="manifesto-box">
+         Clarity
+        </div>
+        <div class="manifesto-box">
+         No noise
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Experience & Results -->
+    <section id="experience-section">
+     <div class="section-container">
+      <h2>Experience &amp; Results</h2>
+      <div class="experience-intro" id="experience-text">
+       We have built strategies and visual systems for companies in real estate, education, IT, and small business. We have led marketing departments, built teams, and launched brands from scratch. Now we apply this experience for those who value clarity over speed.
+      </div>
+      <div class="facts-grid">
+       <div class="fact-item">
+        <p><strong>20+ years</strong> in systemic marketing</p>
+       </div>
+       <div class="fact-item">
+        <p><strong>70+ completed</strong> projects</p>
+       </div>
+       <div class="fact-item">
+        <p><strong>Leading</strong> international teams</p>
+       </div>
+       <div class="fact-item">
+        <p><strong>Launching</strong> brands from scratch</p>
+       </div>
+       <div class="fact-item">
+        <p><strong>Strategic</strong> consulting &amp; lectures</p>
+       </div>
+       <div class="fact-item">
+        <p><strong>We can be expensive</strong> — because we know exactly what we're doing</p>
+       </div>
+      </div>
+     </div>
+    </section><!-- Services -->
+    <section id="services-section">
+     <div class="section-container">
+      <h2>Services</h2>
+      <div class="services-magazine">
+       <div class="service-card">
+        <div>
+         <h3>Audit</h3>
+         <p>We analyze your current positioning, systems, and perception. Understanding before acting.</p>
+        </div>
+       </div>
+       <div class="service-card">
+        <div>
+         <h3>Strategy &amp; Positioning</h3>
+         <p>Building clear, sustainable positioning based on your core strength and market reality.</p>
+        </div>
+       </div>
+       <div class="service-card">
+        <div>
+         <h3>Visual Identity &amp; Naming</h3>
+         <p>Creating cohesive visual systems and naming that reflect strategy and endure over time.</p>
+        </div>
+       </div>
+       <div class="service-card">
+        <div>
+         <h3>Design &amp; Concepts</h3>
+         <p>Landing pages, presentations, and design concepts that communicate with clarity.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- How We Work -->
+    <section id="process-section">
+     <div class="section-container">
+      <h2>How We Work</h2>
+      <div class="process-wrapper">
+       <div class="step-card">
+        <div class="step-number">
+         01
+        </div>
+        <h3>Understand</h3>
+        <p>We deeply understand the core of your business, market, and goals.</p>
+       </div>
+       <div class="step-card">
+        <div class="step-number">
+         02
+        </div>
+        <h3>Audit &amp; Strategy</h3>
+        <p>We conduct a thorough audit and build a clear, actionable strategy.</p>
+       </div>
+       <div class="step-card">
+        <div class="step-number">
+         03
+        </div>
+        <h3>Build System</h3>
+        <p>We assemble a cohesive visual and strategic system for you.</p>
+       </div>
+       <div class="step-card">
+        <div class="step-number">
+         04
+        </div>
+        <h3>Step Back</h3>
+        <p>You continue on your own or with specialists. We've built the foundation.</p>
+       </div>
+      </div>
+     </div>
+    </section><!-- Team -->
+    <section id="team-section">
+     <div class="section-container">
+      <h2>Team</h2>
+      <div class="team-magazine">
+       <div class="team-member-featured">
+        <h3>Daria</h3>
+        <p class="role">Strategist &amp; Systemic Marketing Expert</p>
+        <p>Worked with brands in retail, IT, and culture. Focuses on what works, not just what looks good.</p><a href="#">View experience →</a>
+       </div>
+       <div class="team-member-card">
+        <h3>Alex</h3>
+        <p class="role">Visual Identity &amp; Design</p>
+        <p>Specializes in creating cohesive visual systems that stand the test of time.</p>
+       </div>
+       <div class="team-member-card">
+        <h3>Marina</h3>
+        <p class="role">Positioning &amp; Content</p>
+        <p>Expert in crafting narratives and positioning that resonate deeply.</p>
+       </div>
+      </div>
+     </div>
+    </section><!-- Approach -->
+    <section class="approach-full" id="approach-section">
+     <div class="section-container">
+      <h2>Our Approach</h2>
+      <p class="approach-statement" id="approach-text">We don't chase reach. We build systems that endure.</p>
+      <div class="approach-grid">
+       <div class="approach-point"><strong>Clarity</strong>
+        <p>Every element serves a clear purpose. No decorative noise.</p>
+       </div>
+       <div class="approach-point"><strong>Structure</strong>
+        <p>We build systems, not one-off solutions. Everything connects.</p>
+       </div>
+       <div class="approach-point"><strong>Timelessness</strong>
+        <p>Our work endures beyond trends. We think in decades, not seasons.</p>
+       </div>
+      </div>
+     </div>
+    </section><!-- Case Studies -->
+    <section id="case-studies-section">
+     <div class="section-container">
+      <h2>Case Studies</h2>
+      <p style="margin-bottom: 40px;">Detailed case studies showcasing our work and results.</p>
+      <div class="case-studies-grid">
+       <div class="case-study-placeholder">
+        <p>Coming Soon</p>
+       </div>
+       <div class="case-study-placeholder">
+        <p>Coming Soon</p>
+       </div>
+       <div class="case-study-placeholder">
+        <p>Coming Soon</p>
+       </div>
+       <div class="case-study-placeholder">
+        <p>Coming Soon</p>
+       </div>
+      </div>
+     </div>
+    </section><!-- Contact -->
+    <section class="contact-section" id="contact-section">
+     <div class="section-container">
+      <h2>Get In Touch</h2>
+      <div class="contact-layout">
+       <div class="contact-form">
+  <!-- HubSpot embedded form mount point -->
+  <div id="hubspotForm"></div>
+</div>
+       <div class="contact-info-box">
+        <h3>Contact Info</h3>
+        <div class="contact-info-item">
+         <p>Email</p><a href="mailto:contact@pointzero.com" id="contact-email-display">contact@pointzero.com</a>
+        </div>
+        <div class="contact-info-item">
+         <p>Telegram</p><a href="https://t.me/pointzero" target="_blank" rel="noopener noreferrer" id="contact-telegram-display">@pointzero</a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Footer -->
+    <footer>
+     <div class="footer-grid">
+      <div class="footer-col">
+       <h4>Point_Zero</h4>
+       <p>Marketing agency without noise or marathons.</p>
+      </div>
+      <div class="footer-col">
+       <h4>Legal</h4><a href="#">Privacy Policy</a> <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer-col">
+       <h4>Connect</h4><a href="mailto:contact@pointzero.com">Email</a> <a href="https://t.me/pointzero" target="_blank" rel="noopener noreferrer">Telegram</a>
+      </div>
+      <div class="footer-col">
+       <h4>Resources</h4><a href="#">Blog</a> <a href="#">Case Studies</a>
+      </div>
+     </div>
+     <div class="footer-bottom">
+      <p>© 2024 Point_Zero. All rights reserved.</p>
+     </div>
+    </footer>
+   </div>
+  </main>
+  <script>
+    // Element SDK Configuration
+    const defaultConfig = {
+      headline: "We don't rush. We think and do exactly as much as needed.",
+      subheadline: "Audit, strategy, visual identity, design. No hype or noise.",
+      manifesto_text: "We build for those who understand that brevity is a virtue. We oppose hype, unnecessary complexity, and false urgency. Every decision serves a purpose. Every element earns its place. This is how systems endure.",
+      experience_text: "We have built strategies and visual systems for companies in real estate, education, IT, and small business. We have led marketing departments, built teams, and launched brands from scratch. Now we apply this experience for those who value clarity over speed.",
+      approach_text: "We don't chase reach. We build systems that endure.",
+      contact_email: "contact@pointzero.com",
+      contact_telegram: "@pointzero"
+    };
+
+    let config = { ...defaultConfig };
+
+    const elementConfig = {
+      defaultConfig,
+      onConfigChange: async (updatedConfig) => {
+        config = updatedConfig;
+        
+        const headlineEl = document.getElementById('hero-headline');
+        if (headlineEl) headlineEl.textContent = config.headline || defaultConfig.headline;
+
+        const subheadlineEl = document.getElementById('hero-subheadline');
+        if (subheadlineEl) subheadlineEl.textContent = config.subheadline || defaultConfig.subheadline;
+
+        const manifestoEl = document.getElementById('manifesto-text');
+        if (manifestoEl) manifestoEl.textContent = config.manifesto_text || defaultConfig.manifesto_text;
+
+        const experienceEl = document.getElementById('experience-text');
+        if (experienceEl) experienceEl.textContent = config.experience_text || defaultConfig.experience_text;
+
+        const approachEl = document.getElementById('approach-text');
+        if (approachEl) approachEl.textContent = config.approach_text || defaultConfig.approach_text;
+
+        const emailDisplay = document.getElementById('contact-email-display');
+        if (emailDisplay) {
+          const email = config.contact_email || defaultConfig.contact_email;
+          emailDisplay.textContent = email;
+          emailDisplay.href = `mailto:${email}`;
+        }
+
+        const telegramDisplay = document.getElementById('contact-telegram-display');
+        if (telegramDisplay) telegramDisplay.textContent = config.contact_telegram || defaultConfig.contact_telegram;
+      },
+
+      mapToCapabilities: (cfg) => ({
+        recolorables: [],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      }),
+
+      mapToEditPanelValues: (cfg) => new Map([
+        ["headline", cfg.headline || defaultConfig.headline],
+        ["subheadline", cfg.subheadline || defaultConfig.subheadline],
+        ["manifesto_text", cfg.manifesto_text || defaultConfig.manifesto_text],
+        ["experience_text", cfg.experience_text || defaultConfig.experience_text],
+        ["approach_text", cfg.approach_text || defaultConfig.approach_text],
+        ["contact_email", cfg.contact_email || defaultConfig.contact_email],
+        ["contact_telegram", cfg.contact_telegram || defaultConfig.contact_telegram]
+      ])
+    };
+
+    if (window.elementSdk) {
+      window.elementSdk.init(elementConfig);
+    }
+
+    function scrollToContact() {
+      const contactSection = document.getElementById('contact-section');
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cbd7071238fd0fb',t:'MTc3MDc0NTcyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script charset="utf-8" src="https://js-eu1.hsforms.net/forms/embed/v2.js"></script>
+<script>
+/**
+ * Point_Zero – traffic attribution helper:
+ * - Classifies visit into one of: Telegram / Direct / Referral
+ * - Persists FIRST touch in localStorage (so user can browse before submitting)
+ * - Pushes values into HubSpot hidden fields on form ready
+ *
+ * IMPORTANT (HubSpot setup):
+ * Create hidden fields in the HubSpot form with these internal names if you want them saved:
+ * - traffic_bucket   (Telegram | Direct | Referral)
+ * - traffic_detail   (e.g., t.me, google.com, example.com)
+ * - landing_page     (first page URL)
+ * - referrer         (document.referrer on first touch)
+ */
+(function () {
+  const STORAGE = {
+    firstBucket: "pz_first_traffic_bucket",
+    firstDetail: "pz_first_traffic_detail",
+    firstLanding: "pz_first_landing_page",
+    firstReferrer: "pz_first_referrer",
+  };
+
+  function safeHost(url) {
+    try { return new URL(url).hostname || ""; } catch { return ""; }
+  }
+
+  function getUtmSource() {
+    const p = new URLSearchParams(window.location.search);
+    return (p.get("utm_source") || "").toLowerCase();
+  }
+
+  function classifyTraffic() {
+    const utmSource = getUtmSource();
+    const ref = document.referrer || "";
+    const refHost = safeHost(ref);
+
+    const isTelegram =
+      utmSource.includes("telegram") ||
+      utmSource === "tg" ||
+      refHost.includes("t.me") ||
+      refHost.includes("telegram");
+
+    if (isTelegram) return { bucket: "Telegram", detail: refHost || "telegram" };
+    if (!ref) return { bucket: "Direct", detail: "" };
+    return { bucket: "Referral", detail: refHost || "referral" };
+  }
+
+  function persistFirstTouch() {
+    const cur = classifyTraffic();
+    if (!localStorage.getItem(STORAGE.firstBucket)) localStorage.setItem(STORAGE.firstBucket, cur.bucket);
+    if (!localStorage.getItem(STORAGE.firstDetail)) localStorage.setItem(STORAGE.firstDetail, cur.detail);
+
+    if (!localStorage.getItem(STORAGE.firstLanding)) localStorage.setItem(STORAGE.firstLanding, window.location.href);
+    if (!localStorage.getItem(STORAGE.firstReferrer)) localStorage.setItem(STORAGE.firstReferrer, document.referrer || "");
+  }
+
+  function getFirstTouch() {
+    persistFirstTouch();
+    return {
+      bucket: localStorage.getItem(STORAGE.firstBucket) || "",
+      detail: localStorage.getItem(STORAGE.firstDetail) || "",
+      landing_page: localStorage.getItem(STORAGE.firstLanding) || window.location.href,
+      referrer: localStorage.getItem(STORAGE.firstReferrer) || (document.referrer || "")
+    };
+  }
+
+  // Make available globally for debugging if needed
+  window.__PZ_TRAFFIC__ = { classifyTraffic, getFirstTouch };
+
+  // Ensure first-touch is persisted early
+  persistFirstTouch();
+
+  // Mount HubSpot form with onFormReady hook
+  function mountHubSpotForm() {
+    if (!window.hbspt || !window.hbspt.forms || !window.hbspt.forms.create) return;
+
+    window.hbspt.forms.create({
+      region: "eu1",
+      portalId: "147792538",
+      formId: "41d64bf8-2fdd-4de7-9bc2-ee06740e046a",
+      target: "#hubspotForm",
+      onFormReady: function($form) {
+        const ft = getFirstTouch();
+
+        // $form is a jQuery-like object provided by HubSpot
+        function setIfExists(name, value) {
+          if (!value) return;
+          const $el = $form.find('[name="' + name + '"]');
+          if ($el && $el.length) {
+            $el.val(value);
+            $el.trigger("change");
+          }
+        }
+
+        setIfExists("traffic_bucket", ft.bucket);
+        setIfExists("traffic_detail", ft.detail);
+        setIfExists("landing_page", ft.landing_page);
+        setIfExists("referrer", ft.referrer);
+      }
+    });
+  }
+
+  // HubSpot embed loads async; wait until available
+  const int = setInterval(function() {
+    if (window.hbspt && window.hbspt.forms && window.hbspt.forms.create) {
+      clearInterval(int);
+      mountHubSpotForm();
+    }
+  }, 50);
+
+  setTimeout(function() { clearInterval(int); }, 10000);
+})();
+</script>
+</body>
+</html>
